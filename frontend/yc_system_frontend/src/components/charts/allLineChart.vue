@@ -1,7 +1,7 @@
 <template>
   <div class="allInOne-con">
     <div id="allInOne"></div>
-    <div class="backoff-btn" v-show="needbackoff" @click="backTop"><el-button size="mini">上一层</el-button></div>
+    <div class="backoff-btn" v-show="needbackoff" @click="backTop"><el-button type="primary" size="mini">上一层</el-button></div>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
       })
       const option = {
         title: {
-          text: '区域扬尘变化趋势',
+          // text: '区域扬尘变化趋势',
           padding: [5, 20],
           subtext: whichYear,
           subtextStyle: {
@@ -60,7 +60,8 @@ export default {
         legend: {
           data: ['成华区', '高新区', '双流区', '金牛区', '武侯区', '天府新区', '青羊区', '全市'],
           type: 'scroll',
-          selected: this.selectedList
+          selected: this.selectedList,
+          width: '350px'
         },
         grid: {
           left: '3%',
@@ -126,16 +127,15 @@ export default {
 
 <style scoped>
 #allInOne {
-  width: 1000px;
-  height: 400px;
-  padding: 50px;
+  height: 100%
 }
 .allInOne-con {
   position: relative;
+  height: 100%;
 }
 .backoff-btn {
   position: absolute;
-  left: 900px;
-  top: 50px;
+  top: -35px;
+  right: 10px;
 }
 </style>
